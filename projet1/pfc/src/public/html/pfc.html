@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<title>Online HTML Editor</title>
+
+<head>
+    <meta charset="utf-8">
+
+    <link href="../styles/index.css" rel="stylesheet" type="text/css" />
+    <!--     <script src="../scripts/animation.js"></script> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../scripts/client.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+    <div id = "msg">
+        <h4 id = "messageContent"> </h4>
+        <h5 id = "messageContent2"> </h5>
+        <p id = "messageContent3"> </p>
+    </div>
+
+    <div class="player-container">
+
+        <div class="j1">
+            <!-- <input type="submit" value="blabla" name="Joueur 1" onclick="this.enabled='false'" /> -->
+            <!--             <button id= "test" onclick="window.location.href = '/pfc'"> test </button>
+ -->
+            <h1 id="nomJoueur1">En attente du Joueur...</h1>
+            <button id="j1Pierre" class="btn-hover color-0" disabled><p> Pierre &#9994;&#127995;  </p> </button>
+            <button id="j1Feuille" class="btn-hover color-0"> <p> Feuille &#9995;&#127995;  </p></button>
+            <button id="j1Ciseaux" class="btn-hover color-0"><p> Ciseaux &#9996;&#127995;  </p></button>
+
+        </div>
+
+        <div class="play">
+
+            <div class="PlayerName">
+                <input type="text" id="nom" name="nom">
+                <button  class="btn-hover color-9"  type="submit" id="okOnline"> Jouer En ligne </button>
+                <button  class="btn-hover color-9"  type="submit" id="okBot"> Jouer Contre un BOT </button>
+                
+                <!-- <input type="submit" value="ok"> -->
+            </div>
+            
+            <div class="container">
+                <h1 id="scoreJ1">0</h1>
+                <h1>|</h1>
+                <h1 id="scoreJ2">0</h1>
+
+            </div>
+
+
+        </div>
+
+        <div class="j2">
+            <!--<input type="submit" value="Joueur2" name="test" onclick="this.enabled='false'" /> -->
+
+            <h1 id="nomJoueur2">En attente du Joueur... </h1>
+            <button id="j2Pierre" class="btn-hover color-0"> <p> &#9994;&#127995; Pierre </p> </button>
+            <button id="j2Feuille" class="btn-hover color-0"> <p> &#9995;&#127995; Feuille </p> </button>
+            <button id="j2Ciseaux" class="btn-hover color-0"><p> &#9996;&#127995; Ciseaux </p> </button>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

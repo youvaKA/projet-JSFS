@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Share APP</title>
+	<style>
+		
+		
+
+		/* Code CSS pour la mise en forme de l'application */
+		body {
+			background-image: linear-gradient(60deg, #325267 0%, #1e3f5f 37%, #139064 65%, #00ddff 100%);
+			font-family: Arial, sans-serif;
+			margin: 5%;
+			padding: 0%;
+		}
+		h1 {
+			  font-size: 40px;
+				margin: 20px;
+				text-align: center;
+
+		}
+
+
+		h2 {
+			font-size: 14px;
+			margin-bottom: 10px;
+			margin-top: 0;
+			  font-size: 26px;
+				margin: 20px 0;
+				text-align: center;
+
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+
+		}
+
+		.zone {
+			padding: 20px;
+			margin-bottom: 20px;
+			border-radius: 25px;
+
+		}
+
+		.zone h2 {
+			margin-top: 0;
+		}
+
+		.zone ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+			text-align: center;
+		}
+
+		.delete-button {
+			background-color: #d35223;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			cursor: pointer;
+			border-radius: 55px;
+			margin-left: 10px;
+		}
+		.deco-button {
+			background-color: #d03d4b;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			cursor: pointer;
+			border-radius: 55px;
+			margin-left: 10px;
+		}
+
+		.return-button {
+			background-color: #23aad3;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			cursor: pointer;
+			border-radius: 55px;
+			margin-left: 10px;
+		}
+
+		.borrow-button {
+			background-color: #3cb371;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			cursor: pointer;
+			border-radius: 55px;
+			margin-left: 10px;
+		}
+
+		.connected-user {
+
+			max-width: 770px;
+			margin: 0 auto;
+			padding: 20px;
+
+		}
+
+		.connected-user span {
+
+			margin-right: 10px;
+			font-weight: bold;
+
+		}
+
+
+		.available-items .delete-button,
+		.borrowed-items-by-others .borrow-button {
+			margin-left: auto;
+		}
+
+
+
+
+
+		/* Mise en forme spécifique */
+		.connected-user {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			background-color: #eee;
+			padding: 15px;
+			border-radius: 55px;
+			
+
+		}
+
+		.borrowed-items {
+			background-color: #ace89c;
+			color: #516b4d;
+		}
+
+		.available-items {
+			background-color: #d9edf7;
+			color: #31708f;
+		}
+
+		.container__item {
+			text-align: center;
+		}
+
+		.btn {
+			display: inline-block;
+			background: transparent;
+			color: inherit;
+			font: inherit;
+			border: 0;
+			outline: 0;
+			padding: 0;
+			transition: all 200ms ease-in;
+			cursor: pointer;
+		}
+
+		.btn--primary {
+			background: #7f8ff4;
+			color: #fff;
+			box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.1);
+			border-radius: 12px;
+			padding: 9px 25px;
+		}
+
+		.btn--primary:hover {
+			background: #6c7ff2;
+		}
+
+		.btn--primary:active {
+			background: #7f8ff4;
+			box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.2);
+		}
+
+		.btn--inside {
+			margin-left: -70px;
+		}
+
+		.form__field {
+			width: 360px;
+			background: #fff;
+			color: #a3a3a3;
+			font: inherit;
+			box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+			border: 0;
+			outline: 0;
+			padding: 18px 5px;
+		}
+
+	
+
+	</style>
+
+	<script src="../javascripts/userClient.js" defer="true"></script>
+	<script src="../javascripts/objectsClients.js" defer="true"></script>
+	<style src="../stylesheets/style.css"></style>
+	<script src="/socket.io/socket.io.js"></script>
+
+</head>
+
+<body>
+	<h1>Share APP</h1>
+
+	<div class="connected-user">
+		<div>
+			<span>Nom :</span>
+			<span value="username" id="username"> </span>
+			<span>ID :</span>
+			<span id="userID"></span>
+		</div>
+		<button class="deco-button" onclick="window.location.href='/logout'">Déconnexion</button>
+	</div>
+
+	<div class="container">
+		<!-- Zone objets empruntés -->
+		<div class="zone borrowed-items">
+			<h2>Objets empruntés</h2>
+			<ul id="borrowed-items-list"></ul>
+		</div>
+
+		<!-- Zone objets disponibles à l'emprunt -->
+		<div class="zone available-items">
+			<h2>Objets disponibles à l'emprunt</h2>
+			<form class="container__item" id="add-item-form">
+				<input class="form__field" type="text" placeholder="Nom de l'objet" id="item-name" required>
+				<button id="add" type="button" class="btn btn--primary btn--inside uppercase">Ajouter</button>
+			</form>
+			<ul lass="table-header" id="available-items-list"></ul>
+		</div>
+	</div>
+</body>
+
+</html>

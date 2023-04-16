@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<title>Online HTML Editor</title>
+
+<head>
+    <meta charset="utf-8">
+
+    <link href="../styles/index.css" rel="stylesheet" type="text/css" />
+    <script src="../scripts/animation.js"></script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+
+        <ul class="options" v-sortable="{onAdd: pullItem, group: {name: 'options',}">
+            <h4>Règles jeu de Pierre, Feuille, Ciseaux est un jeu de hasard pour deux joueurs.
+                Les joueurs choisissent simultanément l'une des trois options :
+                pierre, feuille ou ciseaux.</h4>
+            <div class="row"
+                style="margin:5px; width: 800px; border-radius: 2px; padding: 5px; background-color: #211f1f;">
+                <p> La pierre bat les ciseaux (car elle les casse) </p>
+            </div>
+
+            <div class="row"
+                style="margin:5px; width: 800px; border-radius: 2px; padding: 5px; background-color: #211f1f;">
+                <p> Les ciseaux battent la feuille (car ils la coupent)</p>
+            </div>
+
+            <div class="row"
+                style="margin:5px; width: 800px; border-radius: 2px; padding: 5px; background-color: #211f1f;">
+                <p> La feuille bat la pierre (car elle l'enveloppe). </p>
+            </div>
+
+            <div class="row"
+                style="margin:5px; width: 800px; border-radius: 2px; padding: 5px; background-color: #211f1f;">
+                <p> Si les joueurs choisissent la même option, c'est un match nul. </p>
+            </div>
+        </ul>
+
+    </div>
+    
+    
+
+</body>
+
+</html>
